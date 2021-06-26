@@ -32,7 +32,8 @@
 		B92D7B9D268717F700CDFC9A /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92D7B9C268717F700CDFC9A /* DataBaseManager.swift */; };
 		B92D7BA1268718DD00CDFC9A /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92D7BA0268718DD00CDFC9A /* AuthManager.swift */; };
 		B92D7BA42687190B00CDFC9A /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92D7BA32687190B00CDFC9A /* StorageManager.swift */; };
-		B92D7BBC268726D100CDFC9A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92D7BBB268726D100CDFC9A /* Extensions.swift */; };
+		B92D7BBC268726D100CDFC9A /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92D7BBB268726D100CDFC9A /* Extensions+UIView.swift */; };
+		B92D7BC226875EA800CDFC9A /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92D7BC126875EA800CDFC9A /* Extension+String.swift */; };
 		FC42139D3973C1968B5A5D02 /* Pods_PracticeInstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E51A552A2709B360A818A1 /* Pods_PracticeInstagram.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,7 +68,8 @@
 		B92D7B9C268717F700CDFC9A /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		B92D7BA0268718DD00CDFC9A /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		B92D7BA32687190B00CDFC9A /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
-		B92D7BBB268726D100CDFC9A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B92D7BBB268726D100CDFC9A /* Extensions+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
+		B92D7BC126875EA800CDFC9A /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		B92D7B3626870B3400CDFC9A /* PracticeInstagram */ = {
 			isa = PBXGroup;
 			children = (
+				B92D7BC026875E9A00CDFC9A /* Extension */,
 				B92D7B5426870FCF00CDFC9A /* Resources */,
 				B92D7B5326870FC500CDFC9A /* Models */,
 				B92D7B5126870D7A00CDFC9A /* VIews */,
@@ -156,7 +159,6 @@
 				B92D7B9C268717F700CDFC9A /* DataBaseManager.swift */,
 				B92D7BA0268718DD00CDFC9A /* AuthManager.swift */,
 				B92D7BA32687190B00CDFC9A /* StorageManager.swift */,
-				B92D7BBB268726D100CDFC9A /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -196,6 +198,15 @@
 				B92D7B6B268710EF00CDFC9A /* RegistrationViewController.swift */,
 			);
 			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		B92D7BC026875E9A00CDFC9A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B92D7BBB268726D100CDFC9A /* Extensions+UIView.swift */,
+				B92D7BC126875EA800CDFC9A /* Extension+String.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		D8A60753370BAB5AE82F46C9 /* Pods */ = {
@@ -331,12 +342,13 @@
 				B92D7B572687104800CDFC9A /* ExploreViewController.swift in Sources */,
 				B92D7B6C268710EF00CDFC9A /* RegistrationViewController.swift in Sources */,
 				B92D7B782687114A00CDFC9A /* ListViewController.swift in Sources */,
-				B92D7BBC268726D100CDFC9A /* Extensions.swift in Sources */,
+				B92D7BBC268726D100CDFC9A /* Extensions+UIView.swift in Sources */,
 				B92D7BA1268718DD00CDFC9A /* AuthManager.swift in Sources */,
 				B92D7B5E2687107700CDFC9A /* NotificationViewController.swift in Sources */,
 				B92D7B842687119700CDFC9A /* PublishPostViewController.swift in Sources */,
 				B92D7B3A26870B3400CDFC9A /* SceneDelegate.swift in Sources */,
 				B92D7B4226870B3400CDFC9A /* PracticeInstagram.xcdatamodeld in Sources */,
+				B92D7BC226875EA800CDFC9A /* Extension+String.swift in Sources */,
 				B92D7B612687108700CDFC9A /* ProfileViewController.swift in Sources */,
 				B92D7B5B2687106600CDFC9A /* CameraViewController.swift in Sources */,
 				B92D7BA42687190B00CDFC9A /* StorageManager.swift in Sources */,
