@@ -32,6 +32,7 @@
 		B92D7B9D268717F700CDFC9A /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92D7B9C268717F700CDFC9A /* DataBaseManager.swift */; };
 		B92D7BA1268718DD00CDFC9A /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92D7BA0268718DD00CDFC9A /* AuthManager.swift */; };
 		B92D7BA42687190B00CDFC9A /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92D7BA32687190B00CDFC9A /* StorageManager.swift */; };
+		B92D7BBC268726D100CDFC9A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92D7BBB268726D100CDFC9A /* Extensions.swift */; };
 		FC42139D3973C1968B5A5D02 /* Pods_PracticeInstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E51A552A2709B360A818A1 /* Pods_PracticeInstagram.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		B92D7B9C268717F700CDFC9A /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		B92D7BA0268718DD00CDFC9A /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		B92D7BA32687190B00CDFC9A /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		B92D7BBB268726D100CDFC9A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				B92D7B9C268717F700CDFC9A /* DataBaseManager.swift */,
 				B92D7BA0268718DD00CDFC9A /* AuthManager.swift */,
 				B92D7BA32687190B00CDFC9A /* StorageManager.swift */,
+				B92D7BBB268726D100CDFC9A /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				B92D7B572687104800CDFC9A /* ExploreViewController.swift in Sources */,
 				B92D7B6C268710EF00CDFC9A /* RegistrationViewController.swift in Sources */,
 				B92D7B782687114A00CDFC9A /* ListViewController.swift in Sources */,
+				B92D7BBC268726D100CDFC9A /* Extensions.swift in Sources */,
 				B92D7BA1268718DD00CDFC9A /* AuthManager.swift in Sources */,
 				B92D7B5E2687107700CDFC9A /* NotificationViewController.swift in Sources */,
 				B92D7B842687119700CDFC9A /* PublishPostViewController.swift in Sources */,
@@ -490,6 +494,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C3H8B5L9S4;
 				INFOPLIST_FILE = PracticeInstagram/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -510,6 +515,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C3H8B5L9S4;
 				INFOPLIST_FILE = PracticeInstagram/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
