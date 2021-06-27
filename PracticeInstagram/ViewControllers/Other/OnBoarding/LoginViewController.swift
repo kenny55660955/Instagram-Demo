@@ -192,7 +192,7 @@ class LoginViewController: UIViewController {
         userNameEmailField.resignFirstResponder()
         
         guard let userNameEmail = userNameEmailField.text, !userNameEmail.isEmpty,
-              let password = passwordField.text, !password.isEmpty, password.count >= 8 else {
+              let password = passwordField.text, !password.isEmpty else {
             return
         }
         var username: String?
@@ -212,6 +212,7 @@ class LoginViewController: UIViewController {
                 if success {
                     // user logged in
                     self.dismiss(animated: true, completion: nil)
+                    
                 } else {
                     let alert = UIAlertController(title: "Log in Error",
                                                   message: "We were unable to log you in",

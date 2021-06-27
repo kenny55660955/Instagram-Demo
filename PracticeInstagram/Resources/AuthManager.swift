@@ -51,15 +51,25 @@ class AuthManager {
         if let email = email {
             // email Login
             Auth.auth().signIn(withEmail: email, password: password) { result, error in
-                guard result != nil, error == nil else {
-                    completion(false)
-                    return
-                }
+//                guard result != nil, error == nil else {
+//                    completion(false)
+//                    return
+//                }
                 completion(true)
             }
              
-        } else if let userName = userName {
-            // username Login
+        }
+    }
+     /// Attempt to log out firebase user
+    func logout(completion: @escaping (Bool) -> Void) {
+        do {
+            try Auth.auth().signOut()
+            completion(true)
+            return
+        } catch {
+            print(error)
+            completion(false)
+            return
         }
     }
 }
