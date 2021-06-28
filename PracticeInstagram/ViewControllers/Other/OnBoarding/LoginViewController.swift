@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
     private let userNameEmailField: UITextField = {
         let field = UITextField()
         field.placeholder = "UserName or Email..."
+        field.text = "K123@gmail.com"
         field.returnKeyType = .next
         field.leftViewMode = .always
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
@@ -33,6 +34,7 @@ class LoginViewController: UIViewController {
         let field = UITextField()
         field.isSecureTextEntry = true
         field.placeholder = "Password..."
+        field.text = "1234"
         field.returnKeyType = .done
         field.leftViewMode = .always
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
