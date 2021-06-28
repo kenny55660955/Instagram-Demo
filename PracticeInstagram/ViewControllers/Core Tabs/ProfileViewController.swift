@@ -22,6 +22,17 @@ final class ProfileViewController: UIViewController {
         collectionView = UICollectionView(frame: .zero,
                                           collectionViewLayout: layout)
         layout.itemSize = CGSize(width: view.width / 3, height: view.width / 3)
+        collectionView?.backgroundColor = .red
+        
+        // Cell
+        collectionView?.register(PhotoCollectionViewCell.self,
+                                 forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
+        // Header
+        collectionView?.register(ProfileInfoHeaderCollectionReusableView.self,
+                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileInfoHeaderCollectionReusableView.identifier)
+        // View
+        collectionView?.register(ProfileTabsCollectionReusableView.self,
+                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileTabsCollectionReusableView.identifier)
         collectionView?.delegate = self
         collectionView?.dataSource = self
         guard let collectionView = collectionView else { return }
@@ -50,11 +61,17 @@ final class ProfileViewController: UIViewController {
 extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return 30
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as? PhotoCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        cell.backgroundColor = .systemBlue
+        
+        return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

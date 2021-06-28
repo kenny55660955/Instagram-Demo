@@ -84,6 +84,7 @@ final class SettingViewController: UIViewController {
         let vc = EditrProfileViewController()
         vc.title = "Edit Profile"
         let navVC = UINavigationController(rootViewController: vc)
+        navVC.modalPresentationStyle = .fullScreen
         present(navVC, animated: true, completion: nil)
     }
     private func didTapInviteFriends() {
