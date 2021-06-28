@@ -42,6 +42,7 @@
 		B9C8EEAA2689D261007F3E1B /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C8EEA92689D261007F3E1B /* PhotoCollectionViewCell.swift */; };
 		B9C8EEAE2689D290007F3E1B /* ProfileInfoHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C8EEAD2689D290007F3E1B /* ProfileInfoHeaderCollectionReusableView.swift */; };
 		B9C8EEB12689D2B7007F3E1B /* ProfileTabsCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C8EEB02689D2B7007F3E1B /* ProfileTabsCollectionReusableView.swift */; };
+		B9C8EEC9268A4CA1007F3E1B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C8EEC8268A4CA1007F3E1B /* Model.swift */; };
 		FC42139D3973C1968B5A5D02 /* Pods_PracticeInstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E51A552A2709B360A818A1 /* Pods_PracticeInstagram.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		B9C8EEA92689D261007F3E1B /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		B9C8EEAD2689D290007F3E1B /* ProfileInfoHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		B9C8EEB02689D2B7007F3E1B /* ProfileTabsCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabsCollectionReusableView.swift; sourceTree = "<group>"; };
+		B9C8EEC8268A4CA1007F3E1B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 		B92D7B5326870FC500CDFC9A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B9C8EEC8268A4CA1007F3E1B /* Model.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				B92D7BC226875EA800CDFC9A /* Extension+String.swift in Sources */,
 				B9C8EEAE2689D290007F3E1B /* ProfileInfoHeaderCollectionReusableView.swift in Sources */,
 				B92D7B612687108700CDFC9A /* ProfileViewController.swift in Sources */,
+				B9C8EEC9268A4CA1007F3E1B /* Model.swift in Sources */,
 				B92D7B5B2687106600CDFC9A /* CameraViewController.swift in Sources */,
 				B92D7BA42687190B00CDFC9A /* StorageManager.swift in Sources */,
 				B92D7B722687113600CDFC9A /* EditrProfileViewController.swift in Sources */,
