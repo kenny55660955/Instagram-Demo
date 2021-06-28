@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 struct SettingCellModel {
     let title: String
@@ -17,7 +18,7 @@ final class SettingViewController: UIViewController {
     
     // MARK: - Properties
     private let tableView: UITableView = {
-        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: 300, height: 300),
+        let tableView = UITableView(frame: .zero,
                                     style: .grouped)
         tableView.register(UITableViewCell.self,
                            forCellReuseIdentifier: "cell")
@@ -30,17 +31,19 @@ final class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureModels()
-        view.backgroundColor = .yellow
-        view.addSubview(tableView)
-        tableView.delegate = self
-        tableView.dataSource = self
+        addSubViews()
+        assignDelegate()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.frame = view.bounds
+        
     }
     // MARK: - Methods
     private func addSubViews() {
         view.addSubview(tableView)
     }
-    
-    
     
     private func assignDelegate() {
         tableView.delegate = self
@@ -48,12 +51,68 @@ final class SettingViewController: UIViewController {
     }
     
     private func configureModels() {
-        let section = [
-            SettingCellModel(title: "Log Out", handler: { [weak self] in
+        
+        data.append([
+            SettingCellModel(title: "Log Out") { [weak self] in
                 self?.didTapLogout()
-            })
-        ]
-        data.append(section)
+            },
+            SettingCellModel(title: "Invite Friend") { [weak self] in
+                self?.didTapInviteFriends()
+            },
+            SettingCellModel(title: "Save Original Posts") { [weak self] in
+                self?.didTapSaveOriginalPosts()
+            }
+        ])
+        
+        data.append([
+            SettingCellModel(title: "Edit ProFile") { [weak self] in
+                guard let self = self else { return }
+                self.didTapEditProfile()
+            },
+            SettingCellModel(title: "Privacy Pofile") { [weak self] in
+                guard let self = self else { return }
+                self.didTapTerms(type: .privacy)
+            },
+            SettingCellModel(title: "Help / FeedBack") { [weak self] in
+                guard let self = self else { return }
+                self.didTapTerms(type: .terms)
+            }
+        ])
+    }
+    // MARK: - Button Methods
+    private func didTapEditProfile() {
+        let vc = EditrProfileViewController()
+        vc.title = "Edit Profile"
+        let navVC = UINavigationController(rootViewController: vc)
+        present(navVC, animated: true, completion: nil)
+    }
+    private func didTapInviteFriends() {
+        
+    }
+    private func didTapSaveOriginalPosts() {
+        
+    }
+    
+    enum SettingURLType {
+        case terms, privacy, help
+    }
+    
+    private func didTapTerms(type: SettingURLType) {
+        
+        let urlString: String
+        
+        switch type {
+        case .terms:
+            urlString = "https://www.instagram.com/about/legal/terms/before-january-19-2013/"
+        case .privacy:
+            urlString = "https://help.instagram.com/519522125107875"
+        case .help:
+            urlString = "https://help.instagram.com/"
+        }
+        
+        guard let url = URL(string: urlString) else { return }
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true, completion: nil)
     }
     
     private func didTapLogout() {
@@ -102,16 +161,18 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = data[indexPath.section][indexPath.row].title
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
+        
         print("IndexPath: \(indexPath)")
         /// Handle cell select
-        let model = data[indexPath.section][indexPath.row].handler
-        didTapLogout()
+        data[indexPath.section][indexPath.row].handler()
+        
     }
     
     
