@@ -8,13 +8,7 @@
 import Foundation
 import FirebaseStorage
 
-struct PhotoPost {
-    enum UserPostType {
-        case photo, type
-    }
-    
-    let postType: UserPostType
-}
+
 
 class StorageManager {
     
@@ -27,7 +21,7 @@ class StorageManager {
     
     private let bucket = Storage.storage().reference()
     
-    func uploadUserPhotoPost(model: PhotoPost, completion: @escaping (Result<URL, Error>) -> Void) {
+    func uploadUserPhotoPost(model: UserPhotoPost, completion: @escaping (Result<URL, Error>) -> Void) {
         
     }
     
