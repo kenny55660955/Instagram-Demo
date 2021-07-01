@@ -20,22 +20,28 @@ class IGFeedPostActionsTableViewCell: UITableViewCell {
     weak var delegate: IGFeedPostActionsTableViewCellDelegate?
     
     private let likeButton: UIButton = {
-       let button = UIButton()
-        button.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        let button = UIButton()
+        let config = UIImage.SymbolConfiguration(pointSize: 30, weight: .thin)
+        let image = UIImage(systemName: "heart.fill", withConfiguration: config)
+        button.setImage(image, for: .normal)
         button.tintColor = .label
         return button
     }()
     
     private let commentButton: UIButton = {
-       let button = UIButton()
-        button.setImage(UIImage(systemName: "message"), for: .normal)
+        let button = UIButton()
+        let config = UIImage.SymbolConfiguration(pointSize: 30, weight: .thin)
+        let image = UIImage(systemName: "message", withConfiguration: config)
+        button.setImage(image, for: .normal)
         button.tintColor = .label
         return button
     }()
     
     private let sendButton: UIButton = {
-       let button = UIButton()
-        button.setImage(UIImage(systemName: "paperplane"), for: .normal)
+        let button = UIButton()
+        let config = UIImage.SymbolConfiguration(pointSize: 30, weight: .thin)
+        let image = UIImage(systemName: "paperplane", withConfiguration: config)
+        button.setImage(image, for: .normal)
         button.tintColor = .label
         return button
     }()
@@ -93,5 +99,5 @@ class IGFeedPostActionsTableViewCell: UITableViewCell {
     private func didTapSendButton() {
         delegate?.didTapSendButton()
     }
-
+    
 }
