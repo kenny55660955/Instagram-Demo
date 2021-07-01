@@ -11,9 +11,11 @@ struct User {
     let username: String
     let bio: String
     let name: (first: String, last: String)
+    let profilePhoto: URL
     let bitrhDate: Date
     let gender: Gender
     let count: UserCount
+    let joinDate: Date
 }
 enum Gender {
     case male, female, other
