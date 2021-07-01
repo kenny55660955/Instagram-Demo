@@ -117,7 +117,7 @@ extension PostViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = renderModels[indexPath.section]
         
-        switch model.renderType {
+        switch model.renderType { 
         case .actions(let actions):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostTableViewCell.identifier) as? IGFeedPostTableViewCell else { return UITableViewCell() }
             
