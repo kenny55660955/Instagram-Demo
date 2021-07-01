@@ -1,8 +1,8 @@
 # Instagram-Demo
 
-⭐️Languages: Swift.
-⭐️Architecture: MVC.
-⭐️Layout: Programmatic UI, StoryBoard.
+⭐️Languages: Swift.<br />
+⭐️Architecture: MVC.<br />
+⭐️Layout: Programmatic UI, StoryBoard.<br />
 
-Practice Instagram
+Practice Instagram<br />
 This Project didnt finish yet, i would come back to fix if i available.
