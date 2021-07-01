@@ -72,10 +72,29 @@ final class NotificationViewController: UIViewController {
     
     // MARK: - Methods
     private func fetchNotifications() {
+        let user = User(username: "Kenny",
+                        bio: "",
+                        name: (first: "", last: ""),
+                        profilePhoto: URL(string: "https://www.google.com")!,
+                        bitrhDate: Date(),
+                        gender: .male,
+                        count: UserCount(followers: 1, following: 1, posts: 1),
+                        joinDate: Date())
+        
         for x in 0...100 {
-            let post = UserPhotoPost(identifier: "", postType: .photo, thumbnailImage: URL(string: "https://www.google.com")!, postURL: URL(string: "https://www.google.com")!, caption: nil, likeCount: 1, comment: [], createdData: Date(), taggedUsers: [])
+            let post = UserPhotoPost(identifier: "",
+                                     postType: .photo,
+                                     thumbnailImage: URL(string: "https://www.google.com")!,
+                                     postURL: URL(string: "https://www.google.com")!,
+                                     caption: nil,
+                                     likeCount: 1,
+                                     comment: [],
+                                     createdData: Date(),
+                                     taggedUsers: [],
+                                     ower: user)
             let model = UserNotification(type: x % 2 == 0 ? .like(post: post) : .follow(state: .not_following),
-                                         text: "Hello World", user: User(username: "Kenny", bio: "", name: (first: "", last: ""), profilePhoto: URL(string: "https://www.google.com")!, bitrhDate: Date(), gender: .male, count: UserCount(followers: 1, following: 1, posts: 1), joinDate: Date()))
+                                         text: "Hello World",
+                                         user: user)
             models.append(model)
         }
     }
@@ -100,9 +119,7 @@ extension NotificationViewController: UITableViewDelegate, UITableViewDataSource
             guard let cell = tableView.dequeueReusableCell(withIdentifier: NotificationFollowEventTableViewCell.identifier, for: indexPath) as? NotificationFollowEventTableViewCell else { return UITableViewCell() }
             cell.delegate = self
             return cell
-        
         }
-        
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -114,7 +131,21 @@ extension NotificationViewController: UITableViewDelegate, UITableViewDataSource
 
 extension NotificationViewController: NotificationLikeEventTableViewCellDelegate {
     func didTapRelateButton(model: UserNotification) {
+        
+        switch model.type {
+        case .like(let post):
+            let vc = PostViewController(model: post)
+            vc.title = post.postType.rawValue
+            vc.navigationItem.largeTitleDisplayMode = .never
+            navigationController?.pushViewController(vc, animated: true)
+            
+        case .follow(_):
+            fatalError("Dev Issue Should never get called")
+            
+        }
         print("Tapped Post")
+        let vc = PostViewController(model: nil)
+        vc.title = "Post"
     }
 }
 
